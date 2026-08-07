@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utkarsh | AI Websites & Automation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b0f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 80px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 20px;
+      max-width: 650px;
+      margin: auto auto 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      background: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin-bottom: 35px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #15151b;
+      border: 1px solid #25252d;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      text-align: center;
+      background: #121217;
+      border-radius: 18px;
+      padding: 60px 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 700px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero {
+        padding: 70px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">UTKARSH</div>
+
+        <div>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Modern Websites.<br>Smarter Automation.</h1>
+
+        <p>
+          I create modern, responsive websites and AI-assisted digital
+          experiences for businesses.
+        </p>
+
+        <a class="button" href="#projects">View Projects</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+
+        <div class="grid">
+
+          <div class="card">
+            <h3>Website Development</h3>
+            <p>
+              Modern, responsive websites designed for businesses and brands.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Website Redesign</h3>
+            <p>
+              Cleaner layouts and improved user experiences for existing websites.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>AI Automation</h3>
+            <p>
+              AI-assisted workflows that can help businesses handle repetitive tasks.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="card project">
+          <h3>VIVERA Restaurant</h3>
+          <p>
+            A modern restaurant website concept featuring menu,
+            brand presentation and customer-focused design.
+          </p>
+        </div>
+
+        <div class="card project">
+          <h3>Fitness Business Concept</h3>
+          <p>
+            A responsive website concept created for a modern fitness business.
+          </p>
+        </div>
+
+        <div class="card project">
+          <h3>AI Lead Workflow</h3>
+          <p>
+            A concept for capturing enquiries and organizing leads
+            through an AI-assisted workflow.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="contact">
+          <h2 class="section-title">Let's Build Something Great</h2>
+
+          <p style="color:#aaa; margin-bottom:25px;">
+            Have a project or business idea?
+          </p>
+
+          <a class="button" href="mailto:YOUR-PROFESSIONAL-EMAIL">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Utkarsh. Portfolio.
+  </footer>
+
+</body>
+</html>
