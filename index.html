@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Utkarsh — Web Designer & Developer</title>
+  <title>Utkarsh | Creative Web Designer</title>
 
-  <meta name="description" content="Modern websites built with creativity, clean design and smart technology.">
+  <meta
+    name="description"
+    content="Utkarsh creates modern, interactive and professional websites."
+  >
 
   <style>
     * {
@@ -20,10 +23,9 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #080808;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #070707;
       color: #ffffff;
-      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -33,7 +35,7 @@
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1120px, 90%);
       margin: auto;
     }
 
@@ -44,10 +46,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 20px 0;
-      background: rgba(8, 8, 8, 0.75);
-      backdrop-filter: blur(15px);
       z-index: 1000;
+      padding: 20px 0;
+      background: rgba(7, 7, 7, 0.72);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -59,19 +61,19 @@
 
     .logo {
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      gap: 28px;
       font-size: 14px;
     }
 
     .nav-links a {
-      opacity: 0.75;
-      transition: 0.3s;
+      opacity: .65;
+      transition: .3s;
     }
 
     .nav-links a:hover {
@@ -86,67 +88,79 @@
       align-items: center;
       position: relative;
       overflow: hidden;
+      padding-top: 90px;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
-      top: 10%;
-      right: -150px;
-      animation: floatGlow 6s ease-in-out infinite;
+      width: 600px;
+      height: 600px;
+      right: -220px;
+      top: 5%;
+      background: radial-gradient(
+        circle,
+        rgba(255,255,255,.15),
+        transparent 68%
+      );
+      animation: glow 7s ease-in-out infinite;
     }
 
-    @keyframes floatGlow {
-      0%, 100% {
-        transform: translateY(0);
+    @keyframes glow {
+      0%,100% {
+        transform: translateY(0) scale(1);
       }
 
       50% {
-        transform: translateY(40px);
+        transform: translateY(35px) scale(1.08);
       }
     }
 
-    .hero-content {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 70px;
       position: relative;
       z-index: 2;
-      max-width: 800px;
     }
 
     .eyebrow {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      opacity: 0.6;
-      margin-bottom: 20px;
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      opacity: .7;
     }
 
     .hero h1 {
-      font-size: clamp(48px, 9vw, 100px);
-      line-height: 0.95;
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: .94;
       letter-spacing: -4px;
       margin-bottom: 25px;
     }
 
     .hero h1 span {
-      opacity: 0.45;
+      opacity: .4;
     }
 
-    .hero p {
+    .hero-text {
       max-width: 600px;
+      color: rgba(255,255,255,.65);
       font-size: 18px;
-      opacity: 0.7;
+      line-height: 1.7;
       margin-bottom: 35px;
     }
 
     .button {
       display: inline-block;
-      padding: 14px 24px;
+      padding: 15px 25px;
       border-radius: 999px;
       font-weight: 700;
-      transition: 0.3s ease;
+      transition: .3s ease;
     }
 
     .button.primary {
@@ -154,54 +168,113 @@
       color: #000000;
     }
 
-    .button.primary:hover {
+    .button:hover {
       transform: translateY(-4px);
+    }
+
+    /* PROFILE */
+
+    .profile-wrap {
+      display: flex;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    .profile-card {
+      width: min(350px, 85vw);
+      height: 450px;
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.2);
+      background: #111;
+      transform-style: preserve-3d;
+      box-shadow: 0 35px 100px rgba(0,0,0,.65);
+      animation: profileFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes profileFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.65),
+        transparent 55%
+      );
+      pointer-events: none;
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-name {
+      position: absolute;
+      left: 25px;
+      bottom: 22px;
+      z-index: 2;
+      font-size: 20px;
+      font-weight: 800;
     }
 
     /* SECTIONS */
 
-    section {
+    section:not(.hero) {
       padding: 110px 0;
     }
 
-    .section-label {
-      font-size: 12px;
+    .label {
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 3px;
-      opacity: 0.45;
+      opacity: .4;
       margin-bottom: 15px;
     }
 
-    .section-title {
-      font-size: clamp(35px, 6vw, 65px);
+    .title {
+      font-size: clamp(38px, 6vw, 68px);
       line-height: 1;
       margin-bottom: 50px;
     }
 
     /* SERVICES */
 
-    .grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .card {
+      min-height: 240px;
       padding: 35px;
-      min-height: 230px;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 22px;
-      background: rgba(255,255,255,0.035);
-      transition:
-        transform 0.25s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
+      border-radius: 24px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.1);
       transform-style: preserve-3d;
+      transition:
+        transform .2s ease,
+        background .3s ease,
+        border-color .3s ease;
     }
 
     .card:hover {
-      border-color: rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.28);
     }
 
     .card h3 {
@@ -210,69 +283,85 @@
     }
 
     .card p {
-      opacity: 0.6;
+      color: rgba(255,255,255,.58);
+      line-height: 1.7;
     }
 
     /* PROJECTS */
 
     .project {
-      padding: 40px 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: center;
-      transition: 0.3s;
+      padding: 38px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      transition: .3s ease;
     }
 
     .project:hover {
       padding-left: 15px;
     }
 
+    .project-number {
+      font-size: 12px;
+      opacity: .35;
+      margin-bottom: 8px;
+    }
+
     .project h3 {
-      font-size: clamp(25px, 4vw, 42px);
+      font-size: clamp(28px, 4vw, 45px);
+      margin-bottom: 5px;
     }
 
     .project p {
-      opacity: 0.55;
-    }
-
-    .project-number {
-      opacity: 0.35;
-      font-size: 14px;
+      color: rgba(255,255,255,.5);
     }
 
     /* ABOUT */
 
-    .about {
-      max-width: 750px;
-      font-size: 22px;
-      opacity: 0.75;
+    .about-text {
+      max-width: 800px;
+      font-size: 23px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.68);
     }
 
     /* CONTACT */
 
-    .contact {
+    .contact-box {
       text-align: center;
-      padding: 80px 30px;
-      border-radius: 30px;
-      background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.09),
-        rgba(255,255,255,0.025)
-      );
-      border: 1px solid rgba(255,255,255,0.1);
+      padding: 90px 25px;
+      border-radius: 32px;
+      border: 1px solid rgba(255,255,255,.1);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.09),
+          rgba(255,255,255,.025)
+        );
     }
 
-    .contact h2 {
-      font-size: clamp(38px, 7vw, 75px);
-      line-height: 1;
+    .contact-box h2 {
+      font-size: clamp(40px, 7vw, 78px);
+      line-height: .95;
       margin-bottom: 20px;
     }
 
-    .contact p {
-      opacity: 0.6;
+    .contact-box p {
+      color: rgba(255,255,255,.55);
       margin-bottom: 30px;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* FOOTER */
@@ -280,40 +369,39 @@
     footer {
       text-align: center;
       padding: 40px 20px;
-      opacity: 0.4;
       font-size: 13px;
-    }
-
-    /* REVEAL ANIMATION */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: .4;
     }
 
     /* MOBILE */
 
-    @media (max-width: 750px) {
+    @media (max-width: 800px) {
 
       .nav-links {
         display: none;
       }
 
-      .hero h1 {
-        letter-spacing: -2px;
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .grid {
+      .profile-wrap {
+        order: -1;
+      }
+
+      .profile-card {
+        width: min(300px, 82vw);
+        height: 380px;
+      }
+
+      .cards {
         grid-template-columns: 1fr;
       }
 
@@ -321,13 +409,12 @@
         min-height: auto;
       }
 
-      .project {
-        align-items: flex-start;
-        flex-direction: column;
+      section:not(.hero) {
+        padding: 80px 0;
       }
 
-      section {
-        padding: 80px 0;
+      .about-text {
+        font-size: 19px;
       }
     }
   </style>
@@ -335,9 +422,14 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+
   <nav>
     <div class="container nav-inner">
-      <div class="logo">UTKARSH.</div>
+
+      <div class="logo">
+        UTKARSH.
+      </div>
 
       <div class="nav-links">
         <a href="#services">Services</a>
@@ -345,217 +437,305 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
+
     </div>
   </nav>
 
-  <main>
 
-    <!-- HERO -->
+  <!-- HERO -->
 
-    <section class="hero">
-      <div class="container hero-content reveal">
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div class="hero-content reveal">
 
         <div class="eyebrow">
-          Web Designer • Developer • Creator
+          WEB DESIGNER • DEVELOPER • CREATOR
         </div>
 
         <h1>
-          Building Websites<br>
-          <span>That Work Smarter.</span>
+          Building Digital<br>
+          <span>Experiences.</span>
         </h1>
 
-        <p>
+        <p class="hero-text">
           I create modern, responsive and interactive websites
-          designed to look professional and deliver real value.
+          that combine clean design, technology and creativity.
         </p>
 
-        <a class="button primary" href="#projects">
-          Explore My Work
+        <a
+          class="button primary"
+          href="#projects"
+        >
+          Explore My Work →
         </a>
 
       </div>
-    </section>
 
-    <!-- SERVICES -->
 
-    <section id="services">
+      <div class="profile-wrap reveal">
 
-      <div class="container">
+        <div class="profile-card">
 
-        <div class="section-label reveal">
-          What I Can Build
-        </div>
+          <img
+            src="profile.jpg"
+            alt="Utkarsh professional profile photo"
+          >
 
-        <h2 class="section-title reveal">
-          Digital experiences<br>
-          made to stand out.
-        </h2>
-
-        <div class="grid">
-
-          <div class="card reveal">
-            <h3>Business Websites</h3>
-            <p>
-              Professional websites for businesses, brands and creators.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Landing Pages</h3>
-            <p>
-              High-converting landing pages with clean modern design.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <h3>Interactive Websites</h3>
-            <p>
-              Smooth animations and interactive experiences powered by JavaScript.
-            </p>
+          <div class="profile-name">
+            Utkarsh
           </div>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
 
-    <!-- PROJECTS -->
+  </section>
 
-    <section id="projects">
 
-      <div class="container">
+  <!-- SERVICES -->
 
-        <div class="section-label reveal">
-          Featured Projects
+  <section id="services">
+
+    <div class="container">
+
+      <div class="label reveal">
+        What I Do
+      </div>
+
+      <h2 class="title reveal">
+        Digital experiences<br>
+        built to stand out.
+      </h2>
+
+      <div class="cards">
+
+        <div class="card reveal">
+          <h3>Business Websites</h3>
+
+          <p>
+            Professional websites designed for
+            businesses, brands and creators.
+          </p>
         </div>
 
-        <h2 class="section-title reveal">
-          Selected work.
-        </h2>
 
-        <div class="project reveal">
-          <div>
-            <div class="project-number">01</div>
-            <h3>Restaurant Website</h3>
-            <p>Modern mobile-first restaurant experience.</p>
-          </div>
+        <div class="card reveal">
+          <h3>Landing Pages</h3>
+
+          <p>
+            Modern landing pages focused on
+            clarity, performance and conversions.
+          </p>
         </div>
 
-        <div class="project reveal">
-          <div>
-            <div class="project-number">02</div>
-            <h3>Business Landing Page</h3>
-            <p>Clean landing page designed for conversions.</p>
-          </div>
-        </div>
 
-        <div class="project reveal">
-          <div>
-            <div class="project-number">03</div>
-            <h3>AI Study Platform</h3>
-            <p>Concept for a modern AI-powered learning platform.</p>
-          </div>
+        <div class="card reveal">
+          <h3>Interactive Experiences</h3>
+
+          <p>
+            Smooth animations, interactions and
+            JavaScript-powered experiences.
+          </p>
         </div>
 
       </div>
 
-    </section>
+    </div>
 
-    <!-- ABOUT -->
+  </section>
 
-    <section id="about">
 
-      <div class="container">
+  <!-- PROJECTS -->
 
-        <div class="section-label reveal">
-          About
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="label reveal">
+        Selected Work
+      </div>
+
+      <h2 class="title reveal">
+        Projects.
+      </h2>
+
+
+      <div class="project reveal">
+
+        <div class="project-number">
+          01
         </div>
 
-        <p class="about reveal">
-          I combine design, technology and creativity to build
-          digital experiences that are simple, useful and memorable.
+        <h3>
+          Restaurant Website
+        </h3>
+
+        <p>
+          Modern mobile-first restaurant experience.
         </p>
 
       </div>
 
-    </section>
 
-    <!-- CONTACT -->
+      <div class="project reveal">
 
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="contact reveal">
-
-          <h2>
-            Have a project in mind?
-          </h2>
-
-          <p>
-            Let's create something useful, modern and professional.
-          </p>
-
-          <a
-            class="button primary"
-            href="mailto:YOUR-PROFESSIONAL-EMAIL"
-          >
-            Let's Talk
-          </a>
-
+        <div class="project-number">
+          02
         </div>
+
+        <h3>
+          Business Landing Page
+        </h3>
+
+        <p>
+          Professional landing page for a growing business.
+        </p>
 
       </div>
 
-    </section>
 
-  </main>
+      <div class="project reveal">
+
+        <div class="project-number">
+          03
+        </div>
+
+        <h3>
+          AI Study Platform
+        </h3>
+
+        <p>
+          Modern concept for an AI-powered learning platform.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="label reveal">
+        About Me
+      </div>
+
+      <p class="about-text reveal">
+        I combine design, technology and creativity
+        to build websites that are useful, modern
+        and memorable.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-box reveal">
+
+        <h2>
+          Have a project<br>
+          in mind?
+        </h2>
+
+        <p>
+          Let's create something useful,
+          modern and professional.
+        </p>
+
+        <a
+          class="button primary"
+          href="mailto:YOUR-PROFESSIONAL-EMAIL"
+        >
+          Let's Talk →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
 
   <footer>
     © 2026 Utkarsh. Built with AI & creativity.
   </footer>
 
+
+  <!-- JAVASCRIPT -->
+
   <script>
 
     /* SCROLL REVEAL */
 
-    const revealElements = document.querySelectorAll(".reveal");
+    const revealElements =
+      document.querySelectorAll(".reveal");
 
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
 
-        entries.forEach((entry) => {
+          entries.forEach((entry) => {
 
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+            if (entry.isIntersecting) {
 
-        });
+              entry.target.classList.add("show");
 
-      },
-      {
-        threshold: 0.15
-      }
-    );
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
 
     revealElements.forEach((element) => {
-      revealObserver.observe(element);
+
+      observer.observe(element);
+
     });
 
 
-    /* CARD 3D TILT */
+    /* 3D PROFILE TILT */
 
-    if (window.innerWidth > 750) {
+    const profile =
+      document.querySelector(".profile-card");
 
-      document.querySelectorAll(".card").forEach((card) => {
 
-        card.addEventListener("mousemove", (event) => {
+    if (profile && window.innerWidth > 800) {
 
-          const rect = card.getBoundingClientRect();
+      profile.addEventListener(
+        "mousemove",
+        (event) => {
 
-          const x = event.clientX - rect.left;
-          const y = event.clientY - rect.top;
+          const rect =
+            profile.getBoundingClientRect();
+
+          const x =
+            event.clientX - rect.left;
+
+          const y =
+            event.clientY - rect.top;
 
           const rotateX =
             ((y / rect.height) - 0.5) * -8;
@@ -563,221 +743,113 @@
           const rotateY =
             ((x / rect.width) - 0.5) * 8;
 
-          card.style.transform =
-            `perspective(700px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-6px)`;
 
-        });
+          profile.style.animation = "none";
 
-        card.addEventListener("mouseleave", () => {
-          card.style.transform = "";
-        });
+          profile.style.transform =
+            "perspective(1000px) " +
+            "rotateX(" + rotateX + "deg) " +
+            "rotateY(" + rotateY + "deg) " +
+            "scale(1.02)";
 
-      });
+        }
+      );
+
+
+      profile.addEventListener(
+        "mouseleave",
+        () => {
+
+          profile.style.transform = "";
+          profile.style.animation =
+            "profileFloat 5s ease-in-out infinite";
+
+        }
+      );
 
     }
 
 
-    /* BUTTON PRESS EFFECT */
+    /* 3D SERVICE CARDS */
 
-    document.querySelectorAll(".button").forEach((button) => {
+    if (window.innerWidth > 800) {
 
-      button.addEventListener("click", () => {
+      document.querySelectorAll(".card").forEach(
+        (card) => {
 
-        button.style.transform = "scale(0.96)";
+          card.addEventListener(
+            "mousemove",
+            (event) => {
 
-        setTimeout(() => {
-          button.style.transform = "";
-        }, 150);
+              const rect =
+                card.getBoundingClientRect();
 
-      });
+              const x =
+                event.clientX - rect.left;
 
-    });
+              const y =
+                event.clientY - rect.top;
+
+              const rotateX =
+                ((y / rect.height) - 0.5) * -7;
+
+              const rotateY =
+                ((x / rect.width) - 0.5) * 7;
+
+
+              card.style.transform =
+                "perspective(700px) " +
+                "rotateX(" + rotateX + "deg) " +
+                "rotateY(" + rotateY + "deg) " +
+                "translateY(-6px)";
+
+            }
+          );
+
+
+          card.addEventListener(
+            "mouseleave",
+            () => {
+
+              card.style.transform = "";
+
+            }
+          );
+
+        }
+      );
+
+    }
+
+
+    /* BUTTON PRESS */
+
+    document.querySelectorAll(".button").forEach(
+      (button) => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            button.style.transform =
+              "scale(.96)";
+
+            setTimeout(
+              () => {
+
+                button.style.transform = "";
+
+              },
+              150
+            );
+
+          }
+        );
+
+      }
+    );
 
   </script>
-<!-- PREMIUM PROFILE HERO -->
 
-<style>
-  .premium-profile {
-    max-width: 1100px;
-    width: 90%;
-    margin: 0 auto 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    padding: 70px 0;
-  }
-
-  .profile-text {
-    flex: 1;
-  }
-
-  .profile-badge {
-    display: inline-block;
-    padding: 8px 15px;
-    border: 1px solid rgba(255,255,255,.15);
-    border-radius: 50px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    opacity: .7;
-    margin-bottom: 20px;
-  }
-
-  .profile-text h2 {
-    font-size: clamp(40px, 6vw, 75px);
-    line-height: 1;
-    margin-bottom: 20px;
-  }
-
-  .profile-text h2 span {
-    opacity: .45;
-  }
-
-  .profile-text p {
-    max-width: 550px;
-    opacity: .65;
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-
-  .profile-image-box {
-    width: 340px;
-    height: 430px;
-    position: relative;
-    flex-shrink: 0;
-    animation: profileFloat 5s ease-in-out infinite;
-  }
-
-  .profile-image-box::before {
-    content: "";
-    position: absolute;
-    inset: -15px;
-    border-radius: 30px;
-    background: radial-gradient(
-      circle,
-      rgba(255,255,255,.25),
-      transparent 65%
-    );
-    filter: blur(20px);
-    z-index: -1;
-  }
-
-  .profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 28px;
-    border: 1px solid rgba(255,255,255,.2);
-    box-shadow: 0 30px 80px rgba(0,0,0,.55);
-  }
-
-  @keyframes profileFloat {
-    0%, 100% {
-      transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-      transform: translateY(-12px) rotate(1deg);
-    }
-  }
-
-  @media (max-width: 750px) {
-    .premium-profile {
-      flex-direction: column-reverse;
-      text-align: center;
-      padding: 50px 0;
-      gap: 40px;
-    }
-
-    .profile-image-box {
-      width: min(300px, 85vw);
-      height: 370px;
-    }
-
-    .profile-text p {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-</style>
-
-<section class="premium-profile">
-
-  <div class="profile-text">
-
-    <div class="profile-badge">
-      AVAILABLE FOR PROJECTS
-    </div>
-
-    <h2>
-      Hi, I'm Utkarsh.<br>
-      <span>I build digital experiences.</span>
-    </h2>
-
-    <p>
-      I create modern websites with clean design,
-      smooth animations and smart technology.
-    </p>
-
-    <a
-      href="#contact"
-      class="button primary"
-    >
-      Let's Work Together →
-    </a>
-
-  </div>
-
-  <div class="profile-image-box">
-
-    <img
-      src="profile.jpg"
-      alt="Utkarsh"
-      class="profile-image"
-    >
-
-  </div>
-
-</section>
-
-<script>
-  const profileCard =
-    document.querySelector(".profile-image-box");
-
-  if (profileCard && window.innerWidth > 750) {
-
-    profileCard.addEventListener("mousemove", (e) => {
-
-      const rect =
-        profileCard.getBoundingClientRect();
-
-      const x =
-        e.clientX - rect.left;
-
-      const y =
-        e.clientY - rect.top;
-
-      const rotateX =
-        ((y / rect.height) - 0.5) * -8;
-
-      const rotateY =
-        ((x / rect.width) - 0.5) * 8;
-
-      profileCard.style.transform =
-        `translateY(-5px)
-         perspective(800px)
-         rotateX(${rotateX}deg)
-         rotateY(${rotateY}deg)`;
-    });
-
-    profileCard.addEventListener("mouseleave", () => {
-      profileCard.style.transform = "";
-    });
-  }
-</script>
 </body>
 </html>
