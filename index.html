@@ -526,4 +526,42 @@ Let's Talk
 </footer>
 
 </body>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const elements = document.querySelectorAll(
+    ".card, .section-title, .section-label, .about, .contact"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  elements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "opacity .7s ease, transform .7s ease";
+    observer.observe(el);
+  });
+
+  document.querySelectorAll(".button").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.style.transform = "scale(.96)";
+
+      setTimeout(() => {
+        button.style.transform = "";
+      }, 120);
+    });
+  });
+
+});
+</script>
 </html>
