@@ -597,6 +597,187 @@
     });
 
   </script>
+<!-- PREMIUM PROFILE HERO -->
 
+<style>
+  .premium-profile {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 70px 0;
+  }
+
+  .profile-text {
+    flex: 1;
+  }
+
+  .profile-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: .7;
+    margin-bottom: 20px;
+  }
+
+  .profile-text h2 {
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .profile-text h2 span {
+    opacity: .45;
+  }
+
+  .profile-text p {
+    max-width: 550px;
+    opacity: .65;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .profile-image-box {
+    width: 340px;
+    height: 430px;
+    position: relative;
+    flex-shrink: 0;
+    animation: profileFloat 5s ease-in-out infinite;
+  }
+
+  .profile-image-box::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 30px;
+    background: radial-gradient(
+      circle,
+      rgba(255,255,255,.25),
+      transparent 65%
+    );
+    filter: blur(20px);
+    z-index: -1;
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,.2);
+    box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  }
+
+  @keyframes profileFloat {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-12px) rotate(1deg);
+    }
+  }
+
+  @media (max-width: 750px) {
+    .premium-profile {
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 50px 0;
+      gap: 40px;
+    }
+
+    .profile-image-box {
+      width: min(300px, 85vw);
+      height: 370px;
+    }
+
+    .profile-text p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+
+<section class="premium-profile">
+
+  <div class="profile-text">
+
+    <div class="profile-badge">
+      AVAILABLE FOR PROJECTS
+    </div>
+
+    <h2>
+      Hi, I'm Utkarsh.<br>
+      <span>I build digital experiences.</span>
+    </h2>
+
+    <p>
+      I create modern websites with clean design,
+      smooth animations and smart technology.
+    </p>
+
+    <a
+      href="#contact"
+      class="button primary"
+    >
+      Let's Work Together →
+    </a>
+
+  </div>
+
+  <div class="profile-image-box">
+
+    <img
+      src="profile.jpg"
+      alt="Utkarsh"
+      class="profile-image"
+    >
+
+  </div>
+
+</section>
+
+<script>
+  const profileCard =
+    document.querySelector(".profile-image-box");
+
+  if (profileCard && window.innerWidth > 750) {
+
+    profileCard.addEventListener("mousemove", (e) => {
+
+      const rect =
+        profileCard.getBoundingClientRect();
+
+      const x =
+        e.clientX - rect.left;
+
+      const y =
+        e.clientY - rect.top;
+
+      const rotateX =
+        ((y / rect.height) - 0.5) * -8;
+
+      const rotateY =
+        ((x / rect.width) - 0.5) * 8;
+
+      profileCard.style.transform =
+        `translateY(-5px)
+         perspective(800px)
+         rotateX(${rotateX}deg)
+         rotateY(${rotateY}deg)`;
+    });
+
+    profileCard.addEventListener("mouseleave", () => {
+      profileCard.style.transform = "";
+    });
+  }
+</script>
 </body>
 </html>
