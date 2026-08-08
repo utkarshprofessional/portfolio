@@ -1,263 +1,529 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utkarsh | AI Websites & Automation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Utkarsh | AI Websites & Automation</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b0f;
-      color: #ffffff;
-      line-height: 1.6;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid #222;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#08090c;
+  color:#fff;
+  line-height:1.6;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+/* NAVBAR */
 
-    nav a {
-      color: #aaa;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(8,9,12,.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #202127;
+}
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
+nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 80px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-    }
+.logo{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:1px;
+}
 
-    .hero p {
-      color: #aaa;
-      font-size: 20px;
-      max-width: 650px;
-      margin: auto auto 35px;
-    }
+.nav-links a{
+  color:#aaa;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+}
 
-    .button {
-      display: inline-block;
-      padding: 14px 25px;
-      background: #ffffff;
-      color: #000000;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+.nav-links a:hover{
+  color:#fff;
+}
 
-    section {
-      padding: 80px 0;
-    }
+/* HERO */
 
-    .section-title {
-      font-size: 38px;
-      margin-bottom: 35px;
-    }
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.hero-content{
+  width:100%;
+}
 
-    .card {
-      background: #15151b;
-      border: 1px solid #25252d;
-      border-radius: 14px;
-      padding: 28px;
-    }
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #30323a;
+  border-radius:30px;
+  color:#bbb;
+  font-size:13px;
+  margin-bottom:25px;
+}
 
-    .card h3 {
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
+.hero h1{
+  font-size:clamp(45px,8vw,82px);
+  line-height:1.02;
+  letter-spacing:-3px;
+  margin-bottom:25px;
+}
 
-    .card p {
-      color: #aaa;
-    }
+.hero h1 span{
+  color:#8f8f98;
+}
 
-    .project {
-      margin-bottom: 20px;
-    }
+.hero p{
+  max-width:650px;
+  margin:0 auto 35px;
+  color:#aaa;
+  font-size:19px;
+}
 
-    .contact {
-      text-align: center;
-      background: #121217;
-      border-radius: 18px;
-      padding: 60px 20px;
-    }
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      border-top: 1px solid #222;
-    }
+.button{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:9px;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid #333;
+}
 
-    @media (max-width: 700px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+.primary{
+  background:#fff;
+  color:#000;
+}
 
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
+.secondary{
+  color:#fff;
+}
 
-      nav a {
-        margin: 0 8px;
-      }
+/* SECTIONS */
 
-      .hero {
-        padding: 70px 15px;
-      }
-    }
-  </style>
+section{
+  padding:90px 0;
+}
+
+.section-label{
+  color:#888;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.section-title{
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+/* SERVICES */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:#111217;
+  border:1px solid #24262d;
+  border-radius:16px;
+  padding:30px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#444;
+}
+
+.icon{
+  font-size:28px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  font-size:21px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#999;
+}
+
+/* PROJECTS */
+
+.project{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  margin-bottom:18px;
+}
+
+.project-info h3{
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.project-info p{
+  color:#999;
+}
+
+.project-tag{
+  border:1px solid #333;
+  padding:7px 12px;
+  border-radius:20px;
+  color:#aaa;
+  font-size:12px;
+  white-space:nowrap;
+}
+
+/* ABOUT */
+
+.about{
+  max-width:800px;
+}
+
+.about p{
+  color:#aaa;
+  font-size:18px;
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+  background:#111217;
+  border:1px solid #24262d;
+  border-radius:20px;
+  padding:70px 25px;
+}
+
+.contact h2{
+  font-size:45px;
+  margin-bottom:15px;
+}
+
+.contact p{
+  color:#999;
+  margin-bottom:30px;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:35px 0;
+  border-top:1px solid #202127;
+  color:#666;
+  font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    min-height:75vh;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .project{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .section-title{
+    font-size:34px;
+  }
+
+  .contact h2{
+    font-size:34px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">UTKARSH</div>
+<header>
+<div class="container">
+<nav>
 
-        <div>
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
+<div class="logo">UTKARSH</div>
 
-  <main>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
 
-    <section class="hero">
-      <div class="container">
-        <h1>Modern Websites.<br>Smarter Automation.</h1>
+</nav>
+</div>
+</header>
 
-        <p>
-          I create modern, responsive websites and AI-assisted digital
-          experiences for businesses.
-        </p>
 
-        <a class="button" href="#projects">View Projects</a>
-      </div>
-    </section>
+<main>
 
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">What I Do</h2>
+<!-- HERO -->
 
-        <div class="grid">
+<section class="hero">
+<div class="container hero-content">
 
-          <div class="card">
-            <h3>Website Development</h3>
-            <p>
-              Modern, responsive websites designed for businesses and brands.
-            </p>
-          </div>
+<div class="badge">AI Websites • Automation • Digital Solutions</div>
 
-          <div class="card">
-            <h3>Website Redesign</h3>
-            <p>
-              Cleaner layouts and improved user experiences for existing websites.
-            </p>
-          </div>
+<h1>
+Building Websites<br>
+<span>That Work Smarter.</span>
+</h1>
 
-          <div class="card">
-            <h3>AI Automation</h3>
-            <p>
-              AI-assisted workflows that can help businesses handle repetitive tasks.
-            </p>
-          </div>
+<p>
+I create modern, responsive websites and AI-powered digital solutions
+that help businesses build a stronger online presence.
+</p>
 
-        </div>
-      </div>
-    </section>
+<div class="buttons">
 
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
+<a class="button primary" href="#projects">
+View My Work
+</a>
 
-        <div class="card project">
-          <h3>VIVERA Restaurant</h3>
-          <p>
-            A modern restaurant website concept featuring menu,
-            brand presentation and customer-focused design.
-          </p>
-        </div>
+<a class="button secondary" href="#contact">
+Start a Project
+</a>
 
-        <div class="card project">
-          <h3>Fitness Business Concept</h3>
-          <p>
-            A responsive website concept created for a modern fitness business.
-          </p>
-        </div>
+</div>
 
-        <div class="card project">
-          <h3>AI Lead Workflow</h3>
-          <p>
-            A concept for capturing enquiries and organizing leads
-            through an AI-assisted workflow.
-          </p>
-        </div>
+</div>
+</section>
 
-      </div>
-    </section>
 
-    <section>
-      <div class="container">
-        <div class="contact">
-          <h2 class="section-title">Let's Build Something Great</h2>
+<!-- SERVICES -->
 
-          <p style="color:#aaa; margin-bottom:25px;">
-            Have a project or business idea?
-          </p>
+<section id="services">
 
-          <a class="button" href="mailto:YOUR-PROFESSIONAL-EMAIL">
-            Contact Me
-          </a>
-        </div>
-      </div>
-    </section>
+<div class="container">
 
-  </main>
+<div class="section-label">Services</div>
 
-  <footer>
-    © 2026 Utkarsh. Portfolio.
-  </footer>
+<h2 class="section-title">What I Can Build</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Business Websites</h3>
+<p>
+Modern, responsive websites designed to present businesses
+professionally and convert visitors into customers.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Website Redesign</h3>
+<p>
+Clean and modern redesigns that improve presentation,
+navigation and user experience.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>AI Automation</h3>
+<p>
+AI-assisted workflows designed to reduce repetitive work
+and help businesses handle everyday tasks more efficiently.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-label">Selected Work</div>
+
+<h2 class="section-title">Featured Projects</h2>
+
+
+<div class="card project">
+
+<div class="project-info">
+
+<h3>VIVERA Restaurant</h3>
+
+<p>
+Modern restaurant website concept focused on menu presentation,
+brand identity and customer experience.
+</p>
+
+</div>
+
+<div class="project-tag">
+Restaurant
+</div>
+
+</div>
+
+
+<div class="card project">
+
+<div class="project-info">
+
+<h3>Fitness Business Website</h3>
+
+<p>
+Responsive website concept designed for a modern fitness business.
+</p>
+
+</div>
+
+<div class="project-tag">
+Fitness
+</div>
+
+</div>
+
+
+<div class="card project">
+
+<div class="project-info">
+
+<h3>AI Lead Workflow</h3>
+
+<p>
+AI-assisted workflow concept for organizing enquiries
+and improving lead management.
+</p>
+
+</div>
+
+<div class="project-tag">
+Automation
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-label">About</div>
+
+<h2 class="section-title">Building With AI. Creating With Purpose.</h2>
+
+<div class="about">
+
+<p>
+I'm Utkarsh, a young digital creator focused on building modern
+web experiences and exploring practical AI automation for businesses.
+My goal is simple: create useful digital solutions that look great,
+work smoothly and solve real problems.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>Have a project in mind?</h2>
+
+<p>
+Let's create something useful, modern and professional.
+</p>
+
+<a
+class="button primary"
+href="mailto:YOUR-PROFESSIONAL-EMAIL"
+>
+Let's Talk
+</a>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<footer>
+
+© 2026 Utkarsh. Built with AI & creativity.
+
+</footer>
 
 </body>
 </html>
