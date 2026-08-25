@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Utkarsh — Digital Portfolio</title>
+<title>Utkarsh — Web Designer & Developer</title>
 
 <meta name="description"
-content="Utkarsh — Web Designer and Developer creating modern digital experiences.">
+content="Utkarsh is a web designer and developer creating modern, responsive and interactive digital experiences.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
@@ -18,7 +18,6 @@ content="Utkarsh — Web Designer and Developer creating modern digital experien
   --text:#f7f9ff;
   --muted:#9ba6bf;
   --line:rgba(255,255,255,.10);
-  --glass:rgba(255,255,255,.055);
   --blue:#5b8cff;
   --cyan:#55d6ff;
   --purple:#9b6cff;
@@ -44,7 +43,7 @@ body{
   overflow-x:hidden;
 }
 
-body:before{
+body::before{
   content:"";
   position:fixed;
   inset:0;
@@ -57,24 +56,29 @@ body:before{
   background-size:60px 60px;
 }
 
-body:after{
+body::after{
   content:"";
   position:fixed;
-  width:600px;
-  height:600px;
+  width:650px;
+  height:650px;
   left:50%;
   top:40%;
   transform:translate(-50%,-50%);
   border-radius:50%;
-  background:radial-gradient(circle,rgba(73,126,255,.07),transparent 68%);
+  background:radial-gradient(circle,rgba(73,126,255,.08),transparent 68%);
   pointer-events:none;
   z-index:-2;
   animation:ambient 12s ease-in-out infinite alternate;
 }
 
 @keyframes ambient{
-  from{transform:translate(-55%,-48%) scale(1)}
-  to{transform:translate(-45%,-52%) scale(1.18)}
+  from{
+    transform:translate(-55%,-48%) scale(1);
+  }
+
+  to{
+    transform:translate(-45%,-52%) scale(1.18);
+  }
 }
 
 a{
@@ -91,7 +95,7 @@ button{
   margin:auto;
 }
 
-/* NAV */
+/* NAVIGATION */
 
 .navbar{
   position:fixed;
@@ -100,11 +104,11 @@ button{
   width:100%;
   z-index:1000;
   padding:20px 0;
-  transition:.35s;
+  transition:.35s ease;
 }
 
 .navbar.scrolled{
-  background:rgba(5,8,22,.78);
+  background:rgba(5,8,22,.82);
   backdrop-filter:blur(22px);
   border-bottom:1px solid var(--line);
 }
@@ -129,7 +133,7 @@ button{
 .nav-links a{
   color:#9da7bc;
   font-size:13px;
-  transition:.3s;
+  transition:.3s ease;
 }
 
 .nav-links a:hover{
@@ -142,6 +146,7 @@ button{
   background:none;
   color:white;
   font-size:25px;
+  cursor:pointer;
 }
 
 /* HERO */
@@ -151,7 +156,6 @@ button{
   display:flex;
   align-items:center;
   padding:130px 0 80px;
-  position:relative;
 }
 
 .hero-grid{
@@ -185,7 +189,10 @@ button{
 }
 
 @keyframes pulse{
-  50%{transform:scale(1.5);opacity:.5}
+  50%{
+    transform:scale(1.5);
+    opacity:.5;
+  }
 }
 
 .hero h1{
@@ -221,7 +228,7 @@ button{
   border-radius:100px;
   font-size:13px;
   font-weight:700;
-  transition:.3s;
+  transition:.3s ease;
   display:inline-flex;
   justify-content:center;
   align-items:center;
@@ -242,7 +249,7 @@ button{
   transform:translateY(-4px);
 }
 
-/* 3D HERO OBJECT */
+/* HERO VISUAL */
 
 .visual{
   height:520px;
@@ -251,6 +258,7 @@ button{
   justify-content:center;
   position:relative;
   perspective:1000px;
+  transition:transform .2s ease-out;
 }
 
 .orb{
@@ -258,16 +266,30 @@ button{
   height:300px;
   border-radius:50%;
   background:
-    radial-gradient(circle at 28% 20%,#fff 0%,#abc8ff 4%,rgba(91,140,255,.6) 18%,rgba(91,140,255,.12) 50%,transparent 72%);
+    radial-gradient(
+      circle at 28% 20%,
+      #fff 0%,
+      #abc8ff 4%,
+      rgba(91,140,255,.6) 18%,
+      rgba(91,140,255,.12) 50%,
+      transparent 72%
+    );
+
   box-shadow:
     0 0 80px rgba(91,140,255,.2),
     inset -45px -40px 70px rgba(0,0,0,.55);
-  animation:orb 7s ease-in-out infinite;
+
+  animation:orbFloat 7s ease-in-out infinite;
 }
 
-@keyframes orb{
-  0%,100%{transform:translateY(0) rotate(0)}
-  50%{transform:translateY(-20px) rotate(8deg)}
+@keyframes orbFloat{
+  0%,100%{
+    transform:translateY(0) rotate(0);
+  }
+
+  50%{
+    transform:translateY(-20px) rotate(8deg);
+  }
 }
 
 .ring{
@@ -276,7 +298,6 @@ button{
   height:145px;
   border:1px solid rgba(119,170,255,.35);
   border-radius:50%;
-  transform:rotate(-20deg);
   animation:spin 9s linear infinite;
 }
 
@@ -284,16 +305,27 @@ button{
   width:450px;
   height:155px;
   border-color:rgba(180,120,255,.22);
-  transform:rotate(55deg);
-  animation:spin2 12s linear infinite;
+  animation:spinReverse 12s linear infinite;
 }
 
 @keyframes spin{
-  to{transform:rotate(340deg)}
+  from{
+    transform:rotate(-20deg);
+  }
+
+  to{
+    transform:rotate(340deg);
+  }
 }
 
-@keyframes spin2{
-  to{transform:rotate(-305deg)}
+@keyframes spinReverse{
+  from{
+    transform:rotate(55deg);
+  }
+
+  to{
+    transform:rotate(-305deg);
+  }
 }
 
 .floating-card{
@@ -321,7 +353,9 @@ button{
 }
 
 @keyframes floatCard{
-  50%{transform:translateY(-12px)}
+  50%{
+    transform:translateY(-12px);
+  }
 }
 
 /* GENERAL */
@@ -347,48 +381,287 @@ section{
 
 /* PROJECTS */
 
-.project-list{
-  border-top:1px solid var(--line);
-}
-
-.project{
+.project-grid{
   display:grid;
-  grid-template-columns:80px 1fr 70px;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.project-card{
+  min-height:520px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  position:relative;
+  overflow:hidden;
+  padding:34px;
+  border-radius:30px;
+  border:1px solid var(--line);
+  background:
+    linear-gradient(145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.02)
+    );
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(126,164,255,.35);
+  box-shadow:0 30px 90px rgba(0,0,0,.3);
+}
+
+.project-card::before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  top:-160px;
+  right:-130px;
+  background:radial-gradient(
+    circle,
+    rgba(91,140,255,.2),
+    transparent 68%
+  );
+  pointer-events:none;
+}
+
+.project-card.restaurant::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(255,150,80,.14),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba(5,8,22,.85) 100%
+    );
+}
+
+.project-card.library::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(100,170,255,.16),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba(5,8,22,.85) 100%
+    );
+}
+
+.project-top{
+  position:absolute;
+  top:28px;
+  left:30px;
+  right:30px;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
-  gap:25px;
-  padding:40px 10px;
-  border-bottom:1px solid var(--line);
-  transition:.4s;
+  z-index:2;
 }
 
-.project:hover{
-  background:linear-gradient(90deg,rgba(91,140,255,.07),transparent);
-  padding-left:25px;
+.project-number{
+  color:#91a7d8;
+  font-size:12px;
+  letter-spacing:2px;
 }
 
-.project-num{
-  color:#56627b;
-  font-size:13px;
+.project-type{
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:100px;
+  background:rgba(5,8,22,.4);
+  backdrop-filter:blur(10px);
+  color:#aebbd3;
+  font-size:9px;
+  letter-spacing:1.5px;
 }
 
-.project h3{
-  font-size:clamp(25px,4vw,45px);
+.project-visual{
+  position:absolute;
+  top:90px;
+  left:30px;
+  right:30px;
+  height:210px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.1);
+  overflow:hidden;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.1),
+      rgba(255,255,255,.02)
+    );
+}
+
+.restaurant .project-visual{
+  background:
+    radial-gradient(circle at 25% 25%,rgba(255,166,93,.45),transparent 22%),
+    radial-gradient(circle at 75% 35%,rgba(255,82,82,.25),transparent 25%),
+    linear-gradient(135deg,#2b1720,#4d2920,#14101a);
+}
+
+.library .project-visual{
+  background:
+    radial-gradient(circle at 25% 25%,rgba(97,175,255,.35),transparent 22%),
+    radial-gradient(circle at 75% 35%,rgba(121,109,255,.3),transparent 25%),
+    linear-gradient(135deg,#0c1d35,#152a47,#0c1424);
+}
+
+.browser-bar{
+  height:28px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:0 12px;
+  background:rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.browser-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:rgba(255,255,255,.35);
+}
+
+.fake-site{
+  height:calc(100% - 28px);
+  padding:20px;
+}
+
+.fake-title{
+  width:60%;
+  height:22px;
+  border-radius:8px;
+  background:rgba(255,255,255,.72);
+  margin-bottom:12px;
+}
+
+.fake-line{
+  width:85%;
+  height:8px;
+  border-radius:10px;
+  background:rgba(255,255,255,.18);
   margin-bottom:8px;
 }
 
-.project p{
-  color:#737e95;
+.fake-line.short{
+  width:60%;
 }
 
-.arrow{
-  font-size:28px;
-  color:#65718a;
-  transition:.3s;
+.fake-cards{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
 }
 
-.project:hover .arrow{
-  transform:translateX(10px);
-  color:white;
+.fake-card{
+  flex:1;
+  height:70px;
+  border-radius:12px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.project-content{
+  position:relative;
+  z-index:3;
+}
+
+.project-content h3{
+  font-size:clamp(28px,4vw,42px);
+  letter-spacing:-2px;
+  margin-bottom:12px;
+}
+
+.project-content p{
+  color:#a1abc0;
+  line-height:1.7;
+  font-size:14px;
+  max-width:520px;
+  margin-bottom:22px;
+}
+
+.project-features{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:25px;
+}
+
+.feature{
+  padding:7px 10px;
+  border-radius:100px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:#aeb9cf;
+  font-size:10px;
+}
+
+.project-btn{
+  width:max-content;
+  padding:13px 18px;
+  border-radius:100px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.5px;
+  transition:.3s ease;
+}
+
+.project-btn:hover{
+  background:white;
+  color:#07101f;
+  transform:translateY(-3px);
+}
+
+.coming-soon{
+  grid-column:1/-1;
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:40px;
+  border-radius:28px;
+  border:1px dashed rgba(255,255,255,.18);
+  background:rgba(255,255,255,.02);
+}
+
+.coming-number{
+  color:#687898;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.coming-soon h3{
+  font-size:clamp(28px,4vw,48px);
+  margin:10px 0;
+}
+
+.coming-soon p{
+  color:#758199;
+  line-height:1.7;
+  max-width:650px;
 }
 
 /* SERVICES */
@@ -405,8 +678,12 @@ section{
   border-radius:25px;
   border:1px solid var(--line);
   background:
-    linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
-  transition:.35s;
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.07),
+      rgba(255,255,255,.025)
+    );
+  transition:.35s ease;
 }
 
 .service:hover{
@@ -469,7 +746,7 @@ section{
   border-radius:100px;
   color:#b4bfd3;
   background:rgba(255,255,255,.035);
-  transition:.3s;
+  transition:.3s ease;
 }
 
 .skill:hover{
@@ -515,10 +792,12 @@ section{
   border:1px solid var(--line);
   border-radius:35px;
   background:
-    radial-gradient(circle at 50% 0%,rgba(91,140,255,.14),transparent 55%),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(91,140,255,.14),
+      transparent 55%
+    ),
     rgba(255,255,255,.025);
-  overflow:hidden;
-  position:relative;
 }
 
 .contact h2{
@@ -560,12 +839,14 @@ footer{
 .reveal{
   opacity:0;
   transform:translateY(35px);
-  transition:opacity .8s ease,transform .8s ease;
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .reveal.show{
   opacity:1;
-  transform:none;
+  transform:translateY(0);
 }
 
 /* RESPONSIVE */
@@ -613,6 +894,16 @@ footer{
     height:120px;
   }
 
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+  .coming-soon{
+    grid-column:auto;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
   .service-grid{
     grid-template-columns:1fr;
   }
@@ -650,12 +941,25 @@ footer{
     width:100%;
   }
 
-  .project{
-    grid-template-columns:45px 1fr;
+  .project-card{
+    min-height:560px;
+    padding:24px;
   }
 
-  .arrow{
-    display:none;
+  .project-top{
+    left:24px;
+    right:24px;
+  }
+
+  .project-visual{
+    left:24px;
+    right:24px;
+    top:82px;
+    height:180px;
+  }
+
+  .project-content h3{
+    font-size:31px;
   }
 
   .process{
@@ -669,6 +973,7 @@ footer{
   .footer-inner{
     flex-direction:column;
     gap:12px;
+    text-align:center;
   }
 
 }
@@ -678,6 +983,7 @@ footer{
 <body>
 
 <header class="navbar" id="navbar">
+
   <div class="container nav">
 
     <a href="#home" class="logo">UTKARSH.</a>
@@ -693,6 +999,7 @@ footer{
     <button class="menu" aria-label="Menu">☰</button>
 
   </div>
+
 </header>
 
 <main>
@@ -762,40 +1069,191 @@ footer{
 
   <div class="container">
 
-    <div class="label reveal">Selected Work</div>
+    <div class="label reveal">
+      Selected Work
+    </div>
 
     <h2 class="title reveal">
       Projects<span class="gradient">.</span>
     </h2>
 
-    <div class="project-list">
+    <div class="project-grid">
 
-      <article class="project reveal">
-        <div class="project-num">01</div>
-        <div>
-          <h3>Business Website</h3>
-          <p>Modern digital presence for a growing business.</p>
+      <!-- PROJECT 01 -->
+
+      <article class="project-card restaurant reveal">
+
+        <div class="project-top">
+
+          <span class="project-number">
+            01 / RESTAURANT
+          </span>
+
+          <span class="project-type">
+            CONCEPT PROJECT
+          </span>
+
         </div>
-        <div class="arrow">↗</div>
+
+        <div class="project-visual">
+
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+          </div>
+
+          <div class="fake-site">
+
+            <div class="fake-title"></div>
+            <div class="fake-line"></div>
+            <div class="fake-line short"></div>
+
+            <div class="fake-cards">
+              <div class="fake-card"></div>
+              <div class="fake-card"></div>
+              <div class="fake-card"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Khana Drama
+          </h3>
+
+          <p>
+            A modern restaurant website concept designed
+            to create a premium digital experience with
+            menu browsing, ordering information, reviews,
+            gallery and restaurant details.
+          </p>
+
+          <div class="project-features">
+
+            <span class="feature">Responsive Design</span>
+            <span class="feature">Interactive Menu</span>
+            <span class="feature">Gallery</span>
+            <span class="feature">Restaurant Info</span>
+
+          </div>
+
+          <a
+            href="https://khana-drama-magic.lovable.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-btn"
+          >
+            VIEW LIVE PROJECT ↗
+          </a>
+
+        </div>
+
       </article>
 
-      <article class="project reveal">
-        <div class="project-num">02</div>
-        <div>
-          <h3>Creative Landing Page</h3>
-          <p>Conversion-focused landing experience with modern interaction.</p>
+      <!-- PROJECT 02 -->
+
+      <article class="project-card library reveal">
+
+        <div class="project-top">
+
+          <span class="project-number">
+            02 / EDUCATION
+          </span>
+
+          <span class="project-type">
+            CONCEPT PROJECT
+          </span>
+
         </div>
-        <div class="arrow">↗</div>
+
+        <div class="project-visual">
+
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+          </div>
+
+          <div class="fake-site">
+
+            <div class="fake-title"></div>
+            <div class="fake-line"></div>
+            <div class="fake-line short"></div>
+
+            <div class="fake-cards">
+              <div class="fake-card"></div>
+              <div class="fake-card"></div>
+              <div class="fake-card"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <h3>
+            Nirman Library
+          </h3>
+
+          <p>
+            A modern website concept for a self-study
+            centre, designed to present facilities,
+            membership information, FAQs, location
+            details and enquiries in one clear experience.
+          </p>
+
+          <div class="project-features">
+
+            <span class="feature">Modern UI</span>
+            <span class="feature">Facilities</span>
+            <span class="feature">FAQs</span>
+            <span class="feature">Contact System</span>
+
+          </div>
+
+          <a
+            href="https://nirman-growth-hub.lovable.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-btn"
+          >
+            VIEW LIVE PROJECT ↗
+          </a>
+
+        </div>
+
       </article>
 
-      <article class="project reveal">
-        <div class="project-num">03</div>
+      <!-- PROJECT 03 -->
+
+      <div class="coming-soon reveal">
+
         <div>
-          <h3>Portfolio Experience</h3>
-          <p>A cinematic personal portfolio focused on design and development.</p>
+          <div class="coming-number">
+            03 / NEXT PROJECT
+          </div>
+
+          <h3>
+            Building something new<span class="gradient">.</span>
+          </h3>
+
+          <p>
+            My next project is currently in development.
+            This space will become a new, more advanced
+            digital experience as the portfolio grows.
+          </p>
         </div>
-        <div class="arrow">↗</div>
-      </article>
+
+        <span class="project-type">
+          IN DEVELOPMENT
+        </span>
+
+      </div>
 
     </div>
 
@@ -809,7 +1267,9 @@ footer{
 
   <div class="container">
 
-    <div class="label reveal">What I Do</div>
+    <div class="label reveal">
+      What I Do
+    </div>
 
     <h2 class="title reveal">
       Skills that turn<br>
@@ -819,30 +1279,54 @@ footer{
     <div class="service-grid">
 
       <article class="service reveal">
-        <div class="service-number">01 / DESIGN</div>
-        <h3>Web Design</h3>
+
+        <div class="service-number">
+          01 / DESIGN
+        </div>
+
+        <h3>
+          Web Design
+        </h3>
+
         <p>
           Clean, modern and responsive interfaces
           focused on usability and visual identity.
         </p>
+
       </article>
 
       <article class="service reveal">
-        <div class="service-number">02 / DEVELOPMENT</div>
-        <h3>Web Development</h3>
+
+        <div class="service-number">
+          02 / DEVELOPMENT
+        </div>
+
+        <h3>
+          Web Development
+        </h3>
+
         <p>
           Responsive websites built with modern
           HTML, CSS and JavaScript.
         </p>
+
       </article>
 
       <article class="service reveal">
-        <div class="service-number">03 / EXPERIENCE</div>
-        <h3>Interactive Experiences</h3>
+
+        <div class="service-number">
+          03 / EXPERIENCE
+        </div>
+
+        <h3>
+          Interactive Experiences
+        </h3>
+
         <p>
           Smooth animations and thoughtful interactions
           that make websites feel alive.
         </p>
+
       </article>
 
     </div>
@@ -862,6 +1346,7 @@ footer{
       <div class="about-small reveal">
 
         ABOUT ME
+
         <br><br>
 
         DESIGN.<br>
@@ -895,7 +1380,9 @@ footer{
 
   <div class="container">
 
-    <div class="label reveal">Capabilities</div>
+    <div class="label reveal">
+      Capabilities
+    </div>
 
     <h2 class="title reveal">
       Tools & <span class="gradient">Skills.</span>
@@ -924,7 +1411,9 @@ footer{
 
   <div class="container">
 
-    <div class="label reveal">How I Work</div>
+    <div class="label reveal">
+      How I Work
+    </div>
 
     <h2 class="title reveal">
       From idea to <span class="gradient">reality.</span>
@@ -933,35 +1422,67 @@ footer{
     <div class="process">
 
       <div class="step reveal">
-        <div class="step-number">01</div>
-        <h3>Discover</h3>
+
+        <div class="step-number">
+          01
+        </div>
+
+        <h3>
+          Discover
+        </h3>
+
         <p>
           Understand the idea, audience and goals.
         </p>
+
       </div>
 
       <div class="step reveal">
-        <div class="step-number">02</div>
-        <h3>Design</h3>
+
+        <div class="step-number">
+          02
+        </div>
+
+        <h3>
+          Design
+        </h3>
+
         <p>
           Create the visual direction and user experience.
         </p>
+
       </div>
 
       <div class="step reveal">
-        <div class="step-number">03</div>
-        <h3>Build</h3>
+
+        <div class="step-number">
+          03
+        </div>
+
+        <h3>
+          Build
+        </h3>
+
         <p>
           Develop the responsive website and interactions.
         </p>
+
       </div>
 
       <div class="step reveal">
-        <div class="step-number">04</div>
-        <h3>Refine</h3>
+
+        <div class="step-number">
+          04
+        </div>
+
+        <h3>
+          Refine
+        </h3>
+
         <p>
           Test, polish and improve every important detail.
         </p>
+
       </div>
 
     </div>
@@ -1034,86 +1555,110 @@ footer{
 
 /* NAVBAR */
 
-const navbar=document.getElementById("navbar");
+const navbar =
+  document.getElementById("navbar");
 
 window.addEventListener("scroll",()=>{
-  if(window.scrollY>30){
+
+  if(window.scrollY > 30){
+
     navbar.classList.add("scrolled");
+
   }else{
+
     navbar.classList.remove("scrolled");
+
   }
+
 });
+
 
 /* SCROLL REVEAL */
 
-const observer=new IntersectionObserver(
-(entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target);
+const observer =
+  new IntersectionObserver(
+
+    (entries)=>{
+
+      entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold:.12
     }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element=>{
+
+    observer.observe(element);
+
   });
-},
-{
-  threshold:.12
-});
 
-document.querySelectorAll(".reveal").forEach(el=>{
-  observer.observe(el);
-});
 
-/* YEAR */
+/* CURRENT YEAR */
 
-document.getElementById("year").textContent=
-new Date().getFullYear();
+document
+  .getElementById("year")
+  .textContent =
+  new Date().getFullYear();
+
 
 /* HERO 3D MOVEMENT */
 
-const visual=document.querySelector(".visual");
+const visual =
+  document.querySelector(".visual");
 
-if(visual && window.innerWidth>850){
 
-  visual.addEventListener("mousemove",(e)=>{
+if(visual && window.innerWidth > 850){
 
-    const rect=visual.getBoundingClientRect();
+  visual.addEventListener(
+    "mousemove",
+    (event)=>{
 
-    const x=(e.clientX-rect.left)/rect.width-.5;
-    const y=(e.clientY-rect.top)/rect.height-.5;
+      const rect =
+        visual.getBoundingClientRect();
 
-    visual.style.transform=
-      `rotateX(${y*-6}deg) rotateY(${x*8}deg)`;
+      const x =
+        (event.clientX - rect.left) /
+        rect.width - .5;
 
-  });
+      const y =
+        (event.clientY - rect.top) /
+        rect.height - .5;
 
-  visual.addEventListener("mouseleave",()=>{
-    visual.style.transform="";
-  });
+      visual.style.transform =
+        `rotateX(${y * -6}deg)
+         rotateY(${x * 8}deg)`;
+
+    }
+  );
+
+
+  visual.addEventListener(
+    "mouseleave",
+    ()=>{
+
+      visual.style.transform = "";
+
+    }
+  );
 
 }
-
-/* PROJECT HOVER DEPTH */
-
-document.querySelectorAll(".project").forEach(project=>{
-
-  project.addEventListener("mousemove",(e)=>{
-
-    if(window.innerWidth<=850)return;
-
-    const rect=project.getBoundingClientRect();
-
-    const x=(e.clientX-rect.left)/rect.width-.5;
-
-    project.style.transform=
-      `translateX(${x*5}px)`;
-
-  });
-
-  project.addEventListener("mouseleave",()=>{
-    project.style.transform="";
-  });
-
-});
 
 </script>
 
