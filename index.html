@@ -1672,4 +1672,1642 @@
       pointer-events:
         none;
 
-  
+    }
+
+
+    .contact-box h2 {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      font-size:
+        clamp(48px, 7vw, 90px);
+
+      line-height:
+        0.9;
+
+      letter-spacing:
+        -5px;
+
+      margin-bottom:
+        25px;
+
+    }
+
+
+    .contact-box p {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      color:
+        #8793a9;
+
+      margin-bottom:
+        30px;
+
+      line-height:
+        1.7;
+
+    }
+
+
+    .contact-box .btn {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+    }
+
+
+    .email {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      display:
+        block;
+
+      margin-top:
+        24px;
+
+      font-size:
+        13px;
+
+      color:
+        #8baeff;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      padding:
+        45px 0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+
+      color:
+        #657189;
+
+      font-size:
+        12px;
+
+    }
+
+
+    .footer-inner {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      gap:
+        20px;
+
+    }
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    .reveal {
+
+      opacity:
+        0;
+
+      transform:
+        translateY(35px);
+
+      transition:
+
+        opacity
+        0.8s
+        ease,
+
+        transform
+        0.8s
+        ease;
+
+    }
+
+
+    .reveal.show {
+
+      opacity:
+        1;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media (
+      max-width: 950px
+    ) {
+
+
+      .hero-grid {
+
+        grid-template-columns:
+          1fr;
+
+        text-align:
+          center;
+
+      }
+
+
+      .hero-description {
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+
+      }
+
+
+      .buttons {
+
+        justify-content:
+          center;
+
+      }
+
+
+      .projects-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .project-card {
+
+        min-height:
+          430px;
+
+      }
+
+
+      .service-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .about-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          35px;
+
+      }
+
+
+      .process {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+
+    }
+
+
+    @media (
+      max-width: 650px
+    ) {
+
+
+      .nav-links {
+
+        display:
+          none;
+
+      }
+
+
+      .hero {
+
+        padding-top:
+          125px;
+
+      }
+
+
+      .visual {
+
+        height:
+          400px;
+
+      }
+
+
+      .orb {
+
+        width:
+          230px;
+
+        height:
+          230px;
+
+      }
+
+
+      .ring {
+
+        width:
+          330px;
+
+        height:
+          115px;
+
+      }
+
+
+      .ring-two {
+
+        width:
+          360px;
+
+        height:
+          125px;
+
+      }
+
+
+      section:not(.hero) {
+
+        padding:
+          90px 0;
+
+      }
+
+
+      .title {
+
+        letter-spacing:
+          -3px;
+
+      }
+
+
+      .process {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .contact-box {
+
+        padding:
+          80px 20px;
+
+      }
+
+
+      .footer-inner {
+
+        flex-direction:
+          column;
+
+        text-align:
+          center;
+
+      }
+
+
+    }
+
+
+    @media (
+      max-width: 500px
+    ) {
+
+
+      .hero h1 {
+
+        letter-spacing:
+          -4px;
+
+      }
+
+
+      .buttons {
+
+        flex-direction:
+          column;
+
+      }
+
+
+      .btn {
+
+        width:
+          100%;
+
+      }
+
+
+      .project-card {
+
+        padding:
+          23px;
+
+        border-radius:
+          23px;
+
+      }
+
+
+      .project-top {
+
+        margin-bottom:
+          50px;
+
+      }
+
+
+      .floating-card {
+
+        font-size:
+          8px;
+
+      }
+
+
+    }
+
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NAVBAR
+  ===================================================== -->
+
+  <header
+    class="navbar"
+    id="navbar"
+  >
+
+    <div class="container nav">
+
+      <a
+        href="#home"
+        class="logo"
+      >
+        UTKARSH.
+      </a>
+
+
+      <nav class="nav-links">
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="container hero-grid">
+
+
+        <div class="reveal">
+
+
+          <div class="badge">
+
+            <span class="dot"></span>
+
+            AVAILABLE FOR PROJECTS
+
+          </div>
+
+
+          <h1>
+
+            Building
+
+            <br>
+
+            <span class="gradient">
+              Digital
+            </span>
+
+            <br>
+
+            Experiences.
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            I design and build modern digital experiences
+            that combine thoughtful design, technology,
+            performance and smooth interaction.
+
+          </p>
+
+
+          <div class="buttons">
+
+
+            <a
+              href="#projects"
+              class="btn btn-primary"
+            >
+              VIEW MY WORK →
+            </a>
+
+
+            <a
+              href="#contact"
+              class="btn btn-secondary"
+            >
+              LET'S TALK
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <div
+          class="visual reveal"
+          id="visual"
+        >
+
+
+          <div class="orb"></div>
+
+
+          <div class="ring"></div>
+
+
+          <div class="ring-two"></div>
+
+
+          <div class="floating-card card-one">
+
+            DESIGN • CODE
+
+          </div>
+
+
+          <div class="floating-card card-two">
+
+            CREATIVE • DIGITAL
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECTS
+    ===================================================== -->
+
+    <section
+      id="projects"
+    >
+
+      <div class="container">
+
+
+        <div class="label reveal">
+
+          Selected Work
+
+        </div>
+
+
+        <h2 class="title reveal">
+
+          Real Projects<span class="gradient">.</span>
+
+        </h2>
+
+
+
+        <div class="projects-grid">
+
+
+          <!-- =====================
+               PROJECT 01
+          ====================== -->
+
+          <article
+            class="project-card project-one reveal"
+          >
+
+
+            <div class="project-content">
+
+
+              <div class="project-top">
+
+
+                <div class="project-number">
+
+                  01 / PROJECT
+
+                </div>
+
+
+                <div class="project-type">
+
+                  RESTAURANT
+
+                </div>
+
+
+              </div>
+
+
+              <h3>
+
+                Khana Drama
+
+              </h3>
+
+
+              <p class="project-description">
+
+                A modern restaurant website designed to
+                create a premium digital experience with
+                menu browsing, restaurant information,
+                visual sections and a clear customer journey.
+
+              </p>
+
+
+              <div class="tags">
+
+                <span class="tag">
+                  Responsive Design
+                </span>
+
+                <span class="tag">
+                  Restaurant UI
+                </span>
+
+                <span class="tag">
+                  Modern Interface
+                </span>
+
+                <span class="tag">
+                  Digital Experience
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="project-footer">
+
+
+              <a
+                href="https://khana-drama-magic.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+
+                <span>
+                  VIEW LIVE PROJECT
+                </span>
+
+                <span>
+                  ↗
+                </span>
+
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+
+          <!-- =====================
+               PROJECT 02
+          ====================== -->
+
+          <article
+            class="project-card project-two reveal"
+          >
+
+
+            <div class="project-content">
+
+
+              <div class="project-top">
+
+
+                <div class="project-number">
+
+                  02 / PROJECT
+
+                </div>
+
+
+                <div class="project-type">
+
+                  EDUCATION
+
+                </div>
+
+
+              </div>
+
+
+              <h3>
+
+                Nirman Library
+
+              </h3>
+
+
+              <p class="project-description">
+
+                A modern website concept for a self-study
+                centre, designed to present facilities,
+                membership information, FAQs, location
+                details and enquiries in one clear experience.
+
+              </p>
+
+
+              <div class="tags">
+
+                <span class="tag">
+                  Modern UI
+                </span>
+
+                <span class="tag">
+                  Education Website
+                </span>
+
+                <span class="tag">
+                  Information Design
+                </span>
+
+                <span class="tag">
+                  Responsive Layout
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="project-footer">
+
+
+              <a
+                href="https://nirman-growth-hub.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+
+                <span>
+                  VIEW LIVE PROJECT
+                </span>
+
+                <span>
+                  ↗
+                </span>
+
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+
+          <!-- =====================
+               PROJECT 03
+          ====================== -->
+
+          <article
+            class="project-card project-three reveal"
+          >
+
+
+            <div class="project-content">
+
+
+              <div class="project-top">
+
+
+                <div class="project-number">
+
+                  03 / PROJECT
+
+                </div>
+
+
+                <div class="project-type">
+
+                  HOSPITALITY
+
+                </div>
+
+
+              </div>
+
+
+              <h3>
+
+                Grand Inn Keeper
+
+              </h3>
+
+
+              <p class="project-description">
+
+                A premium hotel and hospitality website
+                concept designed to showcase accommodation,
+                rooms, amenities and a modern luxury
+                booking experience.
+
+              </p>
+
+
+              <div class="tags">
+
+                <span class="tag">
+                  Luxury UI
+                </span>
+
+                <span class="tag">
+                  Hotel Website
+                </span>
+
+                <span class="tag">
+                  Responsive Design
+                </span>
+
+                <span class="tag">
+                  Modern Interface
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="project-footer">
+
+
+              <a
+                href="https://grand-inn-keeper.lovable.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+
+                <span>
+                  VIEW LIVE PROJECT
+                </span>
+
+                <span>
+                  ↗
+                </span>
+
+              </a>
+
+
+            </div>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SERVICES
+    ===================================================== -->
+
+    <section
+      id="services"
+    >
+
+      <div class="container">
+
+
+        <div class="label reveal">
+
+          What I Do
+
+        </div>
+
+
+        <h2 class="title reveal">
+
+          Skills that turn
+          <br>
+
+          ideas into
+          <span class="gradient">
+            experiences.
+          </span>
+
+        </h2>
+
+
+
+        <div class="service-grid">
+
+
+          <article class="service reveal">
+
+
+            <div class="service-number">
+
+              01 / DESIGN
+
+            </div>
+
+
+            <h3>
+
+              Web Design
+
+            </h3>
+
+
+            <p>
+
+              Clean, modern and responsive interfaces
+              focused on usability, visual hierarchy
+              and strong digital identity.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="service reveal">
+
+
+            <div class="service-number">
+
+              02 / DEVELOPMENT
+
+            </div>
+
+
+            <h3>
+
+              Web Development
+
+            </h3>
+
+
+            <p>
+
+              Responsive websites and digital experiences
+              built with modern web technologies
+              and interactive elements.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="service reveal">
+
+
+            <div class="service-number">
+
+              03 / EXPERIENCE
+
+            </div>
+
+
+            <h3>
+
+              Interactive Experiences
+
+            </h3>
+
+
+            <p>
+
+              Smooth animations and thoughtful interactions
+              designed to make websites feel
+              engaging and memorable.
+
+            </p>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ===================================================== -->
+
+    <section
+      id="about"
+    >
+
+      <div class="container">
+
+
+        <div class="about-grid">
+
+
+          <div class="about-small reveal">
+
+            ABOUT ME
+
+            <br>
+            <br>
+
+            DESIGN.
+
+            <br>
+
+            TECHNOLOGY.
+
+            <br>
+
+            CREATIVITY.
+
+          </div>
+
+
+
+          <div class="about-text reveal">
+
+            I believe a website should be more than
+            something that simply looks good.
+
+            <br>
+            <br>
+
+            It should feel
+            <strong>
+              fast, useful, memorable
+            </strong>
+            and effortless.
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="label reveal">
+
+          Capabilities
+
+        </div>
+
+
+        <h2 class="title reveal">
+
+          Tools &
+          <span class="gradient">
+            Skills.
+          </span>
+
+        </h2>
+
+
+
+        <div class="skills reveal">
+
+
+          <span class="skill">
+            HTML
+          </span>
+
+
+          <span class="skill">
+            CSS
+          </span>
+
+
+          <span class="skill">
+            JavaScript
+          </span>
+
+
+          <span class="skill">
+            Responsive Design
+          </span>
+
+
+          <span class="skill">
+            UI Design
+          </span>
+
+
+          <span class="skill">
+            Web Development
+          </span>
+
+
+          <span class="skill">
+            Animations
+          </span>
+
+
+          <span class="skill">
+            Interactive Design
+          </span>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROCESS
+    ===================================================== -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="label reveal">
+
+          How I Work
+
+        </div>
+
+
+        <h2 class="title reveal">
+
+          From idea to
+          <span class="gradient">
+            reality.
+          </span>
+
+        </h2>
+
+
+
+        <div class="process">
+
+
+          <article class="step reveal">
+
+
+            <div class="step-number">
+
+              01
+
+            </div>
+
+
+            <h3>
+
+              Discover
+
+            </h3>
+
+
+            <p>
+
+              Understand the idea,
+              audience and project goals.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="step reveal">
+
+
+            <div class="step-number">
+
+              02
+
+            </div>
+
+
+            <h3>
+
+              Design
+
+            </h3>
+
+
+            <p>
+
+              Create the visual direction
+              and user experience.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="step reveal">
+
+
+            <div class="step-number">
+
+              03
+
+            </div>
+
+
+            <h3>
+
+              Build
+
+            </h3>
+
+
+            <p>
+
+              Develop the responsive website
+              and important interactions.
+
+            </p>
+
+
+          </article>
+
+
+
+          <article class="step reveal">
+
+
+            <div class="step-number">
+
+              04
+
+            </div>
+
+
+            <h3>
+
+              Refine
+
+            </h3>
+
+
+            <p>
+
+              Test, polish and improve
+              the important details.
+
+            </p>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+
+    <section
+      id="contact"
+    >
+
+      <div class="container">
+
+
+        <div class="contact-box reveal">
+
+
+          <h2>
+
+            Have a project
+
+            <br>
+
+            <span class="gradient">
+
+              in mind?
+
+            </span>
+
+          </h2>
+
+
+          <p>
+
+            Let's create something modern,
+            useful and memorable.
+
+          </p>
+
+
+          <a
+            href="mailto:utkarsh.sites@gmail.com"
+            class="btn btn-primary"
+          >
+
+            LET'S TALK →
+
+          </a>
+
+
+          <a
+            href="mailto:utkarsh.sites@gmail.com"
+            class="email"
+          >
+
+            utkarsh.sites@gmail.com
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+
+      <div>
+
+        <strong>
+
+          UTKARSH.
+
+        </strong>
+
+      </div>
+
+
+      <div>
+
+        Web Designer • Developer
+
+      </div>
+
+
+      <div>
+
+        ©
+        <span id="year"></span>
+        Utkarsh.
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+
+    /* =========================
+       NAVBAR SCROLL
+    ========================= */
+
+    const navbar =
+      document.getElementById("navbar");
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (
+          window.scrollY > 30
+        ) {
+
+          navbar.classList.add(
+            "scrolled"
+          );
+
+        }
+
+        else {
+
+          navbar.classList.remove(
+            "scrolled"
+          );
+
+        }
+
+      }
+    );
+
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  "show"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(
+        (element) => {
+
+          observer.observe(
+            element
+          );
+
+        }
+      );
+
+
+
+    /* =========================
+       CURRENT YEAR
+    ========================= */
+
+    document
+      .getElementById("year")
+      .textContent =
+        new Date().getFullYear();
+
+
+
+    /* =========================
+       HERO DEPTH EFFECT
+    ========================= */
+
+    const visual =
+      document.getElementById("visual");
+
+
+    if (
+      visual &&
+      window.innerWidth > 850
+    ) {
+
+      visual.addEventListener(
+        "mousemove",
+        (event) => {
+
+          const rect =
+            visual.getBoundingClientRect();
+
+
+          const x =
+            (
+              event.clientX -
+              rect.left
+            )
+            /
+            rect.width
+            -
+            0.5;
+
+
+          const y =
+            (
+              event.clientY -
+              rect.top
+            )
+            /
+            rect.height
+            -
+            0.5;
+
+
+          visual.style.transform =
+            `
+              rotateX(${y * -5}deg)
+              rotateY(${x * 6}deg)
+            `;
+
+        }
+      );
+
+
+      visual.addEventListener(
+        "mouseleave",
+        () => {
+
+          visual.style.transform =
+            "";
+
+        }
+      );
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
